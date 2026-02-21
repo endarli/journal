@@ -1,13 +1,13 @@
 import { defineConfig } from "eslint/config";
-import js from "@eslint/js";
+import ts from "@eslint/ts";
 
 export default defineConfig([
 	{
-		files: ["**/*.js"],
+		files: ["**/*.ts"],
 		plugins: {
-			js,
+			ts,
 		},
-		extends: ["js/recommended"],
+		extends: ["ts/recommended"],
 		rules: {
 			"consistent-return": 2,
 			"indent"           : [1, 4],
