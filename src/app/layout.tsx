@@ -4,6 +4,9 @@ import '../index.css';
 export const metadata: Metadata = {
   title: 'React App',
   description: 'Web site created with Next.js.',
+}
+
+export const viewport: Viewport = {
   themeColor: '#000000',
 }
 
