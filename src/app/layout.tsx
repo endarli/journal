@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import '../index.css';
+// fake fix
+import '../App.css';
+import './components/form.module.css';
 
 export const metadata: Metadata = {
     title: 'React App',
