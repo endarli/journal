@@ -1,15 +1,15 @@
 .feelingsForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    .inputs {
-        gap: 10px;
-        inline-size: 150px;
-    }
+  .inputs {
+    gap: 10px;
+    inline-size: 150px;
+  }
 
-    button {
-        inline-size: 75px;
-        block-size: 24px;
-    }
+  button {
+    inline-size: 75px;
+    block-size: 24px;
+  }
 }

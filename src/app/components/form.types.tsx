@@ -1,7 +1,7 @@
 export type FormProps = {
-    // daily mood rating
-    rating?: number;
+  // daily mood rating
+  rating?: number;
 
-    // date mood was recorded
-    date?: string;
+  // date mood was recorded
+  date?: string;
 };
