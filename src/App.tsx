@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { FeelingsForm } from './app/components/form.tsx';
+import { FeelingsForm } from './components/form.tsx';
 import './App.css';
 
 function App() {
