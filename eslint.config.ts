@@ -1,20 +1,47 @@
-import { defineConfig } from 'eslint/config';
-import ts from '@eslint/ts';
+import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    files: ['**/*.ts'],
-    plugins: {
-      ts,
+    files: ["**/*.ts"],
+    root: true,
+    extends: [
+      "ts/recommended",
+      "eslint:recommended",
+      "plugin:eslint-plugin-react/recommended",
+      "prettier",
+    ],
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+      project: "./tsconfig.json",
+      sourceType: "module",
     },
-    extends: ['ts/recommended', 'eslint:recommended'],
+    plugins: ["@typescript-eslint", "@eslint/ts", "react"],
     rules: {
-      'consistent-return': 2,
-      indent: [1, 2],
-      'no-else-return': 1,
-      semi: [1, 'always'],
-      'space-unary-ops': 2,
-      quotes: ['error', 'double'],
+      semi: [1, "always"],
+      "prefer-const": "error",
+      "@typescript-eslint/ban-ts-comment": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          args: "all",
+          argsIgnorePattern: "^_",
+          caughtErrors: "all",
+          caughtErrorsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+        },
+      ],
+      quotes: ["error", "double"],
+      // indent: [1, 2],
+      "space-unary-ops": ["warn", { words: true, nonwords: false }],
+      "sort-imports": [
+        "error",
+        {
+          ignoreCase: false,
+          ignoreDeclarationSort: false,
+          ignoreMemberSort: false,
+          memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+        },
+      ],
     },
   },
 ]);
