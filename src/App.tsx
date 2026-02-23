@@ -4,11 +4,11 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo.src} className="App-logo" alt="logo" />
-        <FeelingsForm />
+    <div className="app">
+      <header className="appHeader">
+        <img src={logo.src} className="appLogo" alt="logo" />
       </header>
+      <FeelingsForm />
     </div>
   );
 }
