@@ -1,5 +1,5 @@
-import { CatImageMetadata } from './cat-image.types';
-export class CatImageClient {
+import { CatMetadata } from './cat.types';
+export class CatClient {
   private hostUrl: string;
   private hostKey: string;
 
@@ -8,7 +8,7 @@ export class CatImageClient {
     this.hostKey = process.env.CAT_API_KEY || '';
   }
 
-  public async fetchCat(): Promise<CatImageResponse | undefined> {
+  public async fetchCatFromApi(): Promise<CatResponse | undefined> {
     const queryString =
       '?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1';
     const url = this.hostUrl + '/v1/images/search' + queryString;
@@ -39,10 +39,10 @@ export class CatImageClient {
     }
   }
 
-  public async fetchCatImage(): Promise<CatImageMetadata | undefined> {
+  public async fetchCat(): Promise<CatMetadata | undefined> {
     try {
-      const catData = await this.fetchCat();
-      return catData[0] as CatImageMetadata;
+      const catData = await this.fetchCatFromApi();
+      return catData[0] as CatMetadata;
     } catch (error) {
       console.error('Some Error Occurred:', error);
     }

@@ -1,5 +1,5 @@
 import { ClientOnly } from './client';
-import { CatImageClient } from '../../services/cat-image-api';
+import { CatClient } from '../../services/cat-api';
 import { CatContainer } from '../../components/';
 import { cache } from 'react';
 
@@ -10,17 +10,17 @@ export function generateStaticParams() {
 }
 
 export default async function Page() {
-  const getCachedImage = cache(async () => {
-    const client = new CatImageClient();
-    return await client.fetchCatImage();
+  const getCachedCat = cache(async () => {
+    const client = new CatClient();
+    return await client.fetchCat();
   });
 
-  const catImageMetadata = await getCachedImage();
+  const catMetadata = await getCachedCat();
 
   return (
     <>
       <ClientOnly />
-      <CatContainer catInfo={catImageMetadata} />
+      <CatContainer catInfo={catMetadata} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-export interface CatImageResponse {
+export interface CatResponse {
   breeds: {
     weight: {
       imperial: string;
@@ -46,7 +46,7 @@ export interface CatImageResponse {
   height: number;
 }
 
-export interface CatImageMetadata {
+export interface CatMetadata {
   breeds: {
     name: string;
     temperament: string;

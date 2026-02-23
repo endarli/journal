@@ -1,8 +1,8 @@
 'use client';
 import styles from './CatContainer.module.css';
-import { CatImageMetadata } from '../../services/cat-image.types';
+import { CatMetadata } from '../../services/cat.types';
 
-export function CatContainer(params: { catInfo: CatImageMetadata }) {
+export function CatContainer(params: { catInfo: CatMetadata }) {
   const catObject = params.catInfo;
   return (
     <div className={styles.catContainer}>
