@@ -1,4 +1,6 @@
 import { CatMetadata } from './cat.types';
+import { CAT_DATA } from '../mocks/cat-data';
+
 export class CatClient {
   private hostUrl: string;
   private hostKey: string;
@@ -39,12 +41,16 @@ export class CatClient {
     }
   }
 
-  public async fetchCat(): Promise<CatMetadata | undefined> {
-    try {
-      const catData = await this.fetchCatFromApi();
-      return catData[0] as CatMetadata;
-    } catch (error) {
-      console.error('Some Error Occurred:', error);
+  public async fetchCat(environment: string): Promise<CatMetadata | undefined> {
+    if (environment === 'local') {
+      return CAT_DATA as CatMetadata;
+    } else {
+      try {
+        const catData = await this.fetchCatFromApi();
+        return catData[0] as CatMetadata;
+      } catch (error) {
+        console.error('Some Error Occurred:', error);
+      }
     }
   }
 }

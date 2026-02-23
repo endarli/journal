@@ -4,5 +4,11 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
-  "cSpell.words": ["nonwords", "vocalisation", "vetstreet", "vcahospitals"]
+  "cSpell.words": [
+    "nonwords",
+    "vocalisation",
+    "vetstreet",
+    "vcahospitals",
+    "Ragdoll"
+  ]
 }
