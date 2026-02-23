@@ -1,1 +1,1 @@
-export { CatImage } from './CatImage';
+export { CatContainer } from './CatContainer';

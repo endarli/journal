@@ -1,4 +1,4 @@
-import { CatImage } from './CatImage';
+import { CatContainer } from './CatImage';
 import { FeelingsForm } from './Form';
 
-export { CatImage, FeelingsForm };
+export { CatContainer, FeelingsForm };
