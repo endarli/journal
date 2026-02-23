@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
-    files: ['**/*.ts'],
+    files: ['**/*.ts', '**/*.tsx'],
     root: true,
     extends: [
       'ts/recommended',
@@ -15,7 +15,7 @@ export default defineConfig([
       project: './tsconfig.json',
       sourceType: 'module',
     },
-    plugins: ['@typescript-eslint', '@eslint/ts', 'react'],
+    plugins: ['@typescript-eslint', '@eslint/ts', 'react', 'prettier'],
     rules: {
       semi: [1, 'always'],
       'prefer-const': 'error',
@@ -30,8 +30,6 @@ export default defineConfig([
           ignoreRestSiblings: true,
         },
       ],
-      quotes: ['error', 'single'],
-      // indent: [1, 2],
       'space-unary-ops': ['warn', { words: true, nonwords: false }],
       'sort-imports': [
         'error',
