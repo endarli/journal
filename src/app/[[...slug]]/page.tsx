@@ -1,6 +1,9 @@
 import { ClientOnly } from './client';
 import { CatImageClient } from '../../services/cat-image-api';
 import { CatImage } from '../../components/';
+import { cache } from 'react';
+
+export const revalidate = 60 * 5; // Revalidate cache every 5 minutes
 
 export function generateStaticParams() {
   return [{ slug: [''] }];

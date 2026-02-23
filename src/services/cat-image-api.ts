@@ -20,6 +20,7 @@ export class CatImageClient {
       method: 'GET',
       headers: headers,
       redirect: 'follow',
+      next: { revalidate: 60 * 60 * 5 }, // Revalidate cache every 5 hours
     };
 
     try {
