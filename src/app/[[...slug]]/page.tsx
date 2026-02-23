@@ -7,14 +7,17 @@ export function generateStaticParams() {
 }
 
 export default async function Page() {
-  // undefined
-  const client = new CatImageClient();
-  const catImageUrl = await client.fetchCatImageUrl();
+  const getCachedImage = cache(async () => {
+    const client = new CatImageClient();
+    return await client.fetchCatImage();
+  });
+
+  const catImageMetadata = await getCachedImage();
 
   return (
     <>
       <ClientOnly />
-      <CatImage url={catImageUrl} />
+      <CatImage catInfo={catImageMetadata} />
     </>
   );
 }

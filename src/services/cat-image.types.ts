@@ -45,3 +45,16 @@ export interface CatImageResponse {
   width: number;
   height: number;
 }
+
+export interface CatImageMetadata {
+  breeds: {
+    name: string;
+    temperament: string;
+    origin: string;
+    description: string;
+    alt_names: string;
+    wikipedia_url: string;
+    hypoallergenic: number;
+  };
+  url: string;
+}

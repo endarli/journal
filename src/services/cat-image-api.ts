@@ -1,3 +1,4 @@
+import { CatImageMetadata } from './cat-image.types';
 export class CatImageClient {
   private hostUrl: string;
   private hostKey: string;
@@ -24,6 +25,7 @@ export class CatImageClient {
     try {
       const response = await fetch(url, requestOptions);
       if (!response.ok) {
+        console.error('API Response Error:', response);
         throw new Error(
           `Unable to Fetch Data from API, Please check
             URL or Network connectivity!!`
@@ -36,10 +38,10 @@ export class CatImageClient {
     }
   }
 
-  public async fetchCatImageUrl(): Promise<string | undefined> {
+  public async fetchCatImage(): Promise<CatImageMetadata | undefined> {
     try {
       const catData = await this.fetchCat();
-      return catData[0].url;
+      return catData[0] as CatImageMetadata;
     } catch (error) {
       console.error('Some Error Occurred:', error);
     }
