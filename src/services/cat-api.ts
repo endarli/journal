@@ -28,16 +28,16 @@ export class CatClient {
     try {
       const response = await fetch(url, requestOptions);
       if (!response.ok) {
-        console.error('API Response Error:', response);
+        console.error('Cat API Response Error:', response);
         throw new Error(
-          `Unable to Fetch Data from API, Please check
+          `Unable to Fetch Data from Cat API, Please check
             URL or Network connectivity!!`
         );
       }
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error('Some Error Occurred:', error);
+      console.error('Some Cat API Error Occurred:', error);
     }
   }
 
@@ -49,7 +49,7 @@ export class CatClient {
         const catData = await this.fetchCatFromApi();
         return catData[0] as CatMetadata;
       } catch (error) {
-        console.error('Some Error Occurred:', error);
+        console.error('Some Cat API Error Occurred:', error);
       }
     }
   }
