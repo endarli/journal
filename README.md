@@ -2,7 +2,7 @@
 
 This is a React and Next project to journal daily moods, and see cute cats while doing so.
 
-## Available Scripts
+## Scripts
 
 In the project directory, you can run:
 
