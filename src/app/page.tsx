@@ -1,8 +1,8 @@
 import { ClientOnly } from './client';
-import { CatClient } from '../../services/cat-api';
-import { CatContainer } from '../../components/';
+import { CatClient } from '../services/cat-api';
+import { CatContainer } from '../components/';
 import { cache } from 'react';
-import { getEnvironment } from '../server/utilities/environment';
+import { getEnvironment } from './server/utilities/environment';
 
 export const revalidate = 60 * 5; // Revalidate cache every 5 minutes
 
