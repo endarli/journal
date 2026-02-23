@@ -48,9 +48,11 @@ export function FeelingsForm({ rating = 0, date = new Date() }: FormProps) {
         <button onClick={handleClick}>Submit</button>
       </div>
 
-      <p>
-        Your rating for {submittedVals.date}: {submittedVals.rating}
-      </p>
+      {submittedVals.rating !== null && (
+        <p>
+          Your rating for {submittedVals.date}: {submittedVals.rating}
+        </p>
+      )}
     </div>
   );
 }
