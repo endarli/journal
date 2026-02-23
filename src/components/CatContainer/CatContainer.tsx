@@ -17,6 +17,9 @@ export function CatContainer(params: { catInfo: CatMetadata }) {
         <p>Temperament: {catObject.breeds[0].temperament}</p>
         <p>Description: {catObject.breeds[0].description}</p>
         <p>Origin: {catObject.breeds[0].origin}</p>
+        <p>
+          Hypoallergenic: {catObject.breeds[0].hypoallergenic ? 'Yes' : 'No'}
+        </p>
         <a
           href={catObject.breeds[0].wikipedia_url}
           target="_blank"
