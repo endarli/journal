@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import '../global.css';
 
 export const metadata: Metadata = {
-  title: 'React App',
-  description: 'Web site created with Next.js.',
+  title: 'Cat Journal',
+  description: 'Tracker for daily moods and cat related content.',
 };
 
 export const viewport: Viewport = {
