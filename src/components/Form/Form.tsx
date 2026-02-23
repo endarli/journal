@@ -14,7 +14,6 @@ export function FeelingsForm({ rating = 0, date = new Date() }: FormProps) {
     rating: null,
     date: null,
   });
-  console.log(dayState.date);
   function handleRatingChange(event) {
     setDayState({ rating: event.target.value, date: dayState.date });
   }
