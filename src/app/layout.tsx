@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './global.css';
 // fake fix
 import '../App.css';
-import './components/form.module.css';
+import '../components/form.module.css';
 
 export const metadata: Metadata = {
   title: 'React App',

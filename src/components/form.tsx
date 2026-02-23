@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { FormProps } from './form.types';
 import styles from './form.module.css';
@@ -9,12 +10,11 @@ export function FeelingsForm({ rating = 0, date = new Date() }: FormProps) {
     day: 'numeric',
   }).format(date);
   const [dayState, setDayState] = useState({ rating, date: formattedDate });
-  let [sumbittedVals, setSumbittedVals] = useState({
+  const [submittedVals, setSubmittedVals] = useState({
     rating: null,
     date: null,
   });
   console.log(dayState.date);
-
   function handleRatingChange(event) {
     setDayState({ rating: event.target.value, date: dayState.date });
   }
@@ -25,7 +25,7 @@ export function FeelingsForm({ rating = 0, date = new Date() }: FormProps) {
 
   function handleClick(event) {
     event.preventDefault();
-    setSumbittedVals(dayState);
+    setSubmittedVals(dayState);
   }
 
   return (
@@ -50,7 +50,7 @@ export function FeelingsForm({ rating = 0, date = new Date() }: FormProps) {
       </div>
 
       <p>
-        Your rating for {sumbittedVals.date}: {sumbittedVals.rating}
+        Your rating for {submittedVals.date}: {submittedVals.rating}
       </p>
     </div>
   );
