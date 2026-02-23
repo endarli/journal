@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { FormProps } from './form.types';
-import styles from './form.module.css';
+import { FormProps } from './Form.types';
+import styles from './Form.module.css';
 
 export function FeelingsForm({ rating = 0, date = new Date() }: FormProps) {
   const formattedDate = new Intl.DateTimeFormat('fr-CA', {
