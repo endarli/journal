@@ -4,6 +4,10 @@ body {
   background-color: #282c34;
   color: #fff;
 
+  h2 {
+    text-align: center;
+  }
+
   button {
     border: none;
     border-radius: 5px;
