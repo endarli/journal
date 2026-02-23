@@ -1,7 +1,6 @@
 import { cache } from 'react';
 import { getEnvironment } from './server/utilities/environment';
 import { CatClient } from '../services/cat-api';
-import styles from '../components/CatContainer/CatContainer.module.css';
 
 export const revalidate = 60 * 60 * 24 * 7; // Revalidate cache every week
 
@@ -16,11 +15,17 @@ export default async function Custom404() {
     return await client.fetchCat(environment);
   });
   const catMetadata = await getCachedCat();
+  const styles = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: 20,
+  };
 
   return (
     <>
       <h2>404 : Page Not Found</h2>
-      <div className={styles.catContainer}>
+      <div style={styles}>
         <p> Here's a cute cat instead </p>
         <img
           src={catMetadata.url}
