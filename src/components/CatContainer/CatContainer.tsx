@@ -10,6 +10,7 @@ export function CatContainer(params: { catInfo: CatMetadata }) {
       <img
         className={styles.catImage}
         src={catObject.url}
+        as="img"
         alt={catObject.breeds[0].name}
       />
       <div className={styles.catDetails}>
