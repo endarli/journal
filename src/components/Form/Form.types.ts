@@ -1,3 +1,5 @@
+import { DailyRating } from '../../services/google-sheet.types';
+
 export type FormProps = {
   // daily mood rating
   rating?: number;
@@ -5,3 +7,5 @@ export type FormProps = {
   // date mood was recorded
   date?: string;
 };
+
+export type FormDailyRating = DailyRating;
