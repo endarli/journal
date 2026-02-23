@@ -1,14 +1,15 @@
 import { ClientOnly } from './client';
-import { fetchCat } from '../../services/cat-service';
+import { CatImageClient } from '../../services/cat-image-api';
 import { CatImage } from '../../components/';
 
 export function generateStaticParams() {
   return [{ slug: [''] }];
 }
 
-export default function Page() {
-  const catImageUrl = fetchCat().url;
-  console.log(`Cat Image URL: ${catImageUrl}`);
+export default async function Page() {
+  // undefined
+  const client = new CatImageClient();
+  const catImageUrl = await client.fetchCatImageUrl();
 
   return (
     <>
