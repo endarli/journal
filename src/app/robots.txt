@@ -1,4 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
+
+# Block all crawlers except AdsBot
 User-agent: *
-Allow: /
-Disallow: /private/
+Disallow: /
