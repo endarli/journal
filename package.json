@@ -40,6 +40,8 @@
     "@types/react": "19.2.14",
     "eslint": "^9.35.0",
     "eslint-config-eslint": "^13.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
     "jiti": "^2.6.1",
     "prettier": "^3.8.1",
