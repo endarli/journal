@@ -1,5 +1,5 @@
 export interface CatResponse {
-  breeds: {
+  breeds[]: {
     weight: {
       imperial: string;
       metric: string;
@@ -47,7 +47,7 @@ export interface CatResponse {
 }
 
 export interface CatMetadata {
-  breeds: {
+  breeds[]: {
     name: string;
     temperament: string;
     origin: string;
