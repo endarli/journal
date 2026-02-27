@@ -28,7 +28,6 @@ export default async function Page() {
   // const dayRating = useContext(SheetContext);
   const sheetClient = new GoogleSheetClient();
   const formattedDate = new Intl.DateTimeFormat('en-US').format(new Date());
-  console.log('Formatted Date:', formattedDate);
   const dayRating: DailyRating = {
     date: formattedDate,
     rating: 1,
