@@ -25,7 +25,7 @@ GoogleSpreadsheetWorksheet {
   _headerValues: undefined,
   _rowCache: [],
   _spreadsheet: GoogleSpreadsheet {
-    spreadsheetId: '1bCqOO8PUe0Ywgf7BFWVaT4y5gCVSCkf79wfs4ZXNfOY',
+    spreadsheetId: '#',
     auth: JWT {
       _events: [Object: null prototype] {},
       _eventsCount: 0,
@@ -65,7 +65,7 @@ GoogleSpreadsheetWorksheet {
       [Symbol(shapeMode)]: false,
       [Symbol(kCapture)]: false
     },
-    _rawSheets: { '0': [Circular *1], '1548487884': [GoogleSpreadsheetWorksheet] },
+    _rawSheets: { '0': [Circular *1], '#': [GoogleSpreadsheetWorksheet] },
     _rawProperties: {
       title: 'JournalSheet',
       locale: 'en_US',
@@ -74,7 +74,7 @@ GoogleSpreadsheetWorksheet {
       defaultFormat: [Object],
       spreadsheetTheme: [Object]
     },
-    _spreadsheetUrl: 'https://docs.google.com/spreadsheets/d/1bCqOO8PUe0Ywgf7BFWVaT4y5gCVSCkf79wfs4ZXNfOY/edit',
+    _spreadsheetUrl: '',
     _deleted: false,
     sheetsApi: [Function: ky] {
       get: [Function (anonymous)],
