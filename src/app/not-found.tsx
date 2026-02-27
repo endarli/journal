@@ -29,7 +29,6 @@ export default async function Custom404() {
         <p> Here's a cute cat instead </p>
         <img
           src={catMetadata?.url}
-          as="img"
           alt={catMetadata?.breeds[0].name}
           width="300px"
         />
