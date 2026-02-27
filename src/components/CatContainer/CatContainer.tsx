@@ -2,7 +2,7 @@
 import styles from './CatContainer.module.css';
 import { CatMetadata } from '../../services/cat.types';
 
-export function CatContainer({url, breeds}: CatMetadata) {
+export function CatContainer({ url, breeds }: CatMetadata) {
   return (
     <div className={styles.catContainer}>
       <h3>Cute Cat</h3>
@@ -17,14 +17,8 @@ export function CatContainer({url, breeds}: CatMetadata) {
         <p>Temperament: {breeds[0].temperament}</p>
         <p>Description: {breeds[0].description}</p>
         <p>Origin: {breeds[0].origin}</p>
-        <p>
-          Hypoallergenic: {breeds[0].hypoallergenic ? 'Yes' : 'No'}
-        </p>
-        <a
-          href={breeds[0].wikipedia_url}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <p>Hypoallergenic: {breeds[0].hypoallergenic ? 'Yes' : 'No'}</p>
+        <a href={breeds[0].wikipedia_url} target="_blank" rel="noreferrer">
           Learn more about the {breeds[0].name}
         </a>
       </div>

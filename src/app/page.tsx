@@ -38,7 +38,7 @@ export default async function Page() {
     <>
       <ClientOnly />
       <FeelingsForm />
-      <CatContainer catInfo={catMetadata} />
+      <CatContainer url={catMetadata.url} breeds={catMetadata.breeds} />
     </>
   );
 }
