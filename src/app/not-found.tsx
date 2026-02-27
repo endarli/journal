@@ -25,7 +25,7 @@ export default async function Custom404() {
   return (
     <>
       <h2>404 : Page Not Found</h2>
-      <div style={styles}>
+      <div>
         <p> Here's a cute cat instead </p>
         <img
           src={catMetadata.url}
