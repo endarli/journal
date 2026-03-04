@@ -6,6 +6,7 @@ export class GoogleSheetClient {
   private hostEmail: string;
   private hostKey: string;
   private hostSheetID: string;
+  private auth: JWT;
 
   constructor() {
     this.hostEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || '';

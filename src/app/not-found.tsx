@@ -1,15 +1,11 @@
 import { cache } from 'react';
-import { getEnvironment } from './server/utilities/environment';
+import { getEnvironment } from '../utilities/environment';
 import { CatClient } from '../services/cat-api';
 
 export const revalidate = 60 * 60 * 24 * 7; // Revalidate cache every week
 
-export function generateStaticParams() {
-  return [{ slug: [''] }];
-}
-
 export default async function Custom404() {
-  const environment = getEnvironment();
+  let environment = getEnvironment();
   const getCachedCat = cache(async () => {
     const client = new CatClient();
     return await client.fetchCat(environment);
@@ -25,13 +21,16 @@ export default async function Custom404() {
   return (
     <>
       <h2>404 : Page Not Found</h2>
-      <div style={styles}>
+      <div style={styles as React.CSSProperties}>
         <p> Here's a cute cat instead </p>
-        <img
-          src={catMetadata.url}
-          alt={catMetadata.breeds[0].name}
-          width="300px"
-        />
+        {catMetadata && (
+          <img
+            src={catMetadata.url}
+            alt={catMetadata.breeds[0].name}
+            width="300px"
+          />
+        )}
+        <img src="/images/cat.jpg" alt="Ragdoll" width="300px" />
       </div>
     </>
   );

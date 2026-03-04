@@ -1,4 +1,4 @@
-import { CatMetadata } from './cat.types';
+import { CatMetadata, CatResponse } from './cat.types';
 import { CAT_DATA } from '../mocks/cat-data';
 
 export class CatClient {
@@ -10,7 +10,7 @@ export class CatClient {
     this.hostKey = process.env.CAT_API_KEY || '';
   }
 
-  public async fetchCatFromApi(): Promise<CatResponse | undefined> {
+  public async fetchCatFromApi(): Promise<Array<CatResponse> | undefined> {
     const queryString =
       '?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1';
     const url = this.hostUrl + '/v1/images/search' + queryString;
@@ -18,7 +18,7 @@ export class CatClient {
       'Content-Type': 'application/json',
       'x-api-key': this.hostKey,
     });
-    const requestOptions = {
+    const requestOptions: RequestInit = {
       method: 'GET',
       headers: headers,
       redirect: 'follow',
@@ -35,7 +35,7 @@ export class CatClient {
         );
       }
       const data = await response.json();
-      return data;
+      return data as Array<CatResponse>;
     } catch (error) {
       console.error('Some Cat API Error Occurred:', error);
     }
@@ -47,6 +47,10 @@ export class CatClient {
     } else {
       try {
         const catData = await this.fetchCatFromApi();
+        if (!catData) {
+          throw new Error('No cat data received from API');
+        }
+        console.log('Fetched cat data:', catData);
         return catData[0] as CatMetadata;
       } catch (error) {
         console.error('Some Cat API Error Occurred:', error);

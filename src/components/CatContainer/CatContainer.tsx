@@ -2,16 +2,11 @@
 import styles from './CatContainer.module.css';
 import { CatMetadata } from '../../services/cat.types';
 
-export function CatContainer({ url, breeds }: CatMetadata) {
+export const CatContainer = ({ url, breeds }: CatMetadata) => {
   return (
     <div className={styles.catContainer}>
       <h3>Cute Cat</h3>
-      <img
-        className={styles.catImage}
-        src={url}
-        as="img"
-        alt={breeds[0].name}
-      />
+      <img className={styles.catImage} src={url} alt={breeds[0].name} />
       <div className={styles.catDetails}>
         <h3>{breeds[0].name}</h3>
         <p>Temperament: {breeds[0].temperament}</p>
@@ -24,4 +19,4 @@ export function CatContainer({ url, breeds }: CatMetadata) {
       </div>
     </div>
   );
-}
+};

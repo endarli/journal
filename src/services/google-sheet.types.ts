@@ -4,7 +4,7 @@ export interface SheetResponse {
 }
 
 export interface DailyRating {
-  date: string | null;
+  date: string | undefined;
   rating: number;
 }
 

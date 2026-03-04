@@ -1,5 +1,5 @@
 export interface CatResponse {
-  breeds[]: {
+  breeds: {
     weight: {
       imperial: string;
       metric: string;
@@ -39,7 +39,7 @@ export interface CatResponse {
     wikipedia_url: string;
     hypoallergenic: number;
     reference_image_id: string;
-  };
+  }[];
   id: string;
   url: string;
   width: number;
@@ -47,7 +47,7 @@ export interface CatResponse {
 }
 
 export interface CatMetadata {
-  breeds[]: {
+  breeds: {
     name: string;
     temperament: string;
     origin: string;
@@ -55,6 +55,6 @@ export interface CatMetadata {
     alt_names: string;
     wikipedia_url: string;
     hypoallergenic: number;
-  };
+  }[];
   url: string;
 }

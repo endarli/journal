@@ -1,16 +1,16 @@
 import { cache, useContext } from 'react';
-import { ClientOnly } from './client';
-import { CatClient } from '../services/cat-api';
-import { GoogleSheetClient } from '../services/google-sheet-api';
-import { getEnvironment } from './server/utilities/environment';
-import { CatContainer } from '../components/';
-import { FeelingsForm } from '../components/';
-import { SheetContext } from '../components/Form/Form';
+import { ClientOnly } from '../../components';
+import { CatClient } from '../../services/cat-api';
+import { GoogleSheetClient } from '../../services/google-sheet-api';
+import { getEnvironment } from '../../utilities/environment';
+import { CatContainer } from '../../components/';
+import { FeelingsForm } from '../../components/';
+import { SheetContext } from '../../components/Form/Form';
 
 export const revalidate = 60 * 5; // Revalidate cache every 5 minutes
 
 export function generateStaticParams() {
-  return [{ slug: [''] }];
+  return [{ slug: 'post-1' }, { slug: 'post-2' }];
 }
 
 export default async function Page() {
@@ -24,6 +24,7 @@ export default async function Page() {
     return await catClient.fetchCat(environment);
   });
   const catMetadata = await getCachedCat();
+  console.log('catMetadata:', catMetadata);
 
   // const dayRating = useContext(SheetContext);
   const sheetClient = new GoogleSheetClient();
@@ -38,7 +39,9 @@ export default async function Page() {
     <>
       <ClientOnly />
       <FeelingsForm />
-      <CatContainer url={catMetadata.url} breeds={catMetadata.breeds} />
+      {catMetadata && (
+        <CatContainer url={catMetadata.url} breeds={catMetadata.breeds} />
+      )}
     </>
   );
 }
